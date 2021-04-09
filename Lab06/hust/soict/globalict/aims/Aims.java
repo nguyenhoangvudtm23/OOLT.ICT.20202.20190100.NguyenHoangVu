@@ -75,13 +75,30 @@ public class Aims {
 					int key = 0;
 					System.out.println("Choose the id of item u want to add");
 					printListMedia();
-					System.out.print("Enter item id: ");
-					key = sc.nextInt();
-					if(key < 0 || key >= listMedia.size()) {
-						System.out.println("Wrong item id doesn't exist !!!");
-						break;
+					System.out.println("Example adding item: " + "1,2,3,4,5,6");
+					System.out.println("Enter item id: ");
+					String s = sc.next();
+					String[] additemid = s.split(",");
+					for(String id: additemid) {
+						System.out.println(id);
 					}
-					order.addMedia(listMedia.get(key));
+//					System.out.println(additemid);
+					for(String id: additemid) {
+						try {
+							key = Integer.valueOf(id.trim());
+							order.addMedia(listMedia.get(key));
+						}
+						catch(Exception e) {
+							System.out.println("Wrong id item: " + id);
+						}
+						
+					}
+//					key = sc.nextInt();
+//					if(key < 0 || key >= listMedia.size()) {
+//						System.out.println("Wrong item id doesn't exist !!!");
+//						break;
+//					}
+//					order.addMedia(listMedia.get(key));
 					listOrder.set(currentIdOrder, order);
 				}
 				break;

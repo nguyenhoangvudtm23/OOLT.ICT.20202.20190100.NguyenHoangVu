@@ -65,7 +65,7 @@ public class MyDate{
 		}
 		// date is not null
 		else {
-			SimpleDateFormat spdf = new SimpleDateFormat("yyyy-mm-dd");
+			SimpleDateFormat spdf = new SimpleDateFormat("MM/dd/yyyy");
 			spdf.setLenient(false);
 			try {
 				Date date = spdf.parse(strDate);
@@ -96,11 +96,11 @@ public class MyDate{
 		return res;
 	}
 	public String GetFormatDate() {
-		return "YYYY-MM-DD";
+		return "MM/DD/YYYY";
 	}
 	
 	public String GetDatebyFormat(){
 		// format yyyy-mm-dd
-		return String.format("%d-%02d-%02d", year, month, day);
+		return String.format("%02d/%02d/%d", month, day, year);
 	}
 }
