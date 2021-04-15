@@ -109,7 +109,8 @@ public class Order {
 	// get information of order
 	public void showOrder() {
 		for(Media med: itemsOrdered) {
-			System.out.printf("%03d%-20s%-20s%\t%f\n", med.getMediaID(), med.getTitle(), med.getCategory(), med.getCost());
+			int count = 0;
+			System.out.printf("%03d\t%s\t%s\t%.2f\n", count++, med.getTitle(), med.getCategory(), med.getCost());
 		}
 	}
 	
