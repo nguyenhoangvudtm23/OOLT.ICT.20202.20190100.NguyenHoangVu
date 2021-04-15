@@ -29,6 +29,7 @@ public class Aims {
 			switch(c) {
 			case '1':
 				Order neworder = createnewOrder();
+				System.out.println(neworder.date.GetDate());
 				break;
 			case '2':
 				// choose the order to add
