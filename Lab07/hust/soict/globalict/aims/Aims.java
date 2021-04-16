@@ -27,8 +27,36 @@ public class Aims {
 		// TODO Auto-generated method stub
 		createListMedia();
 //		CustomerMenu();
-		AdminMenu();
+//		AdminMenu();
+		System.out.println("Program Start !!!");
+		char c = '0';
+		do {
+			MainMenu();
+			c = sc.next().charAt(0);
+			sc.nextLine();
+			switch(c) {
+			case '1': 
+				AdminMenu();
+				break;
+			case '2':
+				CustomerMenu();
+				break;
+			case '0':
+				break;
+			default:
+				System.out.println("Wrong choice !!");
+				break;
+			}
+		}while(c != '0');
 		
+		System.out.println("End program");
+	}
+	public static void MainMenu() {
+		System.out.println("Main Menu !!");
+		System.out.println("1. Admin Menu");
+		System.out.println("2. Customer Menu");
+		System.out.println("0. Exit");
+		System.out.println("Please choose a number: 0-1-2");
 	}
 	// admin menu
 	public static void AdminMenu() {
