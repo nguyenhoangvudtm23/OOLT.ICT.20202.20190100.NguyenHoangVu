@@ -3,7 +3,22 @@ package hust.soict.globalict.aims.media;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class Media {
+public abstract class Media implements Comparable<Media> {
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if(this.getItemID() == ((Media)obj).getItemID()) return true;
+		return false;
+		
+	}
+
+	@Override
+	public int compareTo(Media o) {
+		// TODO Auto-generated method stub
+		return this.title.compareTo(o.title);
+	}
+
 	private static int ID = 0;
 	private final int itemID;
 	protected String title, category;

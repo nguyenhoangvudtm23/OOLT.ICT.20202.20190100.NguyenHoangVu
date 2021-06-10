@@ -6,6 +6,7 @@ import hust.soict.globalict.aims.utils.MyDate;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -637,22 +638,26 @@ public class Aims {
 		listMedia.addAll(ListBook);
 	}
 	public static void printListMedia() {
+		Collections.sort(listMedia);
 		int count = 0;
 		for(Media med: listMedia) {
 			System.out.printf("%03d\t%s\n", med.getItemID(), med.getTitle());
 		}
 	}
 	public static void printListBook() {
+		Collections.sort(ListBook);
 		for(Media med: ListBook) {
 			System.out.printf("%03d\t%s\n", med.getItemID(), med.getTitle());
 		}
 	}
 	public static void printListCompacDisc() {
+		Collections.sort(ListCompactDisc);
 		for(Media med: ListCompactDisc) {
 			System.out.printf("%03d\t%s\n", med.getItemID(), med.getTitle());
 		}
 	}
 	public static void printListDigitalVideoDisc() {
+		Collections.sort(ListDigitalVideoDisc);
 		for(Media med: ListDigitalVideoDisc) {
 			System.out.printf("%03d\t%s\n", med.getItemID(), med.getTitle());
 		}

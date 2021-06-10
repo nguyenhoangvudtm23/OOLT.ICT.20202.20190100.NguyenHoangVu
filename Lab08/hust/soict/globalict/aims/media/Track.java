@@ -6,6 +6,13 @@ public class Track implements Playable{
 	public String getTitle() {
 		return title;
 	}
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		Track track = (Track)obj;
+		if(track.title == this.title && track.length == this.length) return true;
+		return false;
+	}
 	public int getLength() {
 		return length;
 	}

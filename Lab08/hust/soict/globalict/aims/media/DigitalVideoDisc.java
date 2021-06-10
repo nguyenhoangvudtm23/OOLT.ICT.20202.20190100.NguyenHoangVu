@@ -2,6 +2,14 @@ package hust.soict.globalict.aims.media;
 
 
 public class DigitalVideoDisc extends Disc implements Playable {
+	@Override
+	public int compareTo(Media o) {
+		// TODO Auto-generated method stub
+		DigitalVideoDisc disc = (DigitalVideoDisc)o;
+		if(this.cost == disc.cost) return 0;
+		else if(this.cost < disc.cost) return -1;
+		else return 1;
+	}
 	private static int ID = 0;
 	public String getDirector() {
 		return director;
