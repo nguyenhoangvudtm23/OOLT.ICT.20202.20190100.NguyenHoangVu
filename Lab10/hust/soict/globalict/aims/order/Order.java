@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.naming.LimitExceededException;
+
 
 
 public class Order {
@@ -29,12 +31,13 @@ public class Order {
 //		else return true;
 //	}
 	
-	public static Order createOrder() throws OutNumberOrderException {
+	public static Order createOrder() throws OutNumberOrderException, LimitExceededException {
 		if(nbOrders < MAX_LIMITED_ORDERS) {
 			return new Order();
 		}
 		else {
-			throw new OutNumberOrderException("You can't create more orders !!!\nThe maximum orders can be created is " + MAX_LIMITED_ORDERS + "\n");
+			throw new LimitExceededException("ERROR: The number of orders has reached its limit!");
+//			throw new OutNumberOrderException("You can't create more orders !!!\nThe maximum orders can be created is " + MAX_LIMITED_ORDERS + "\n");
 		}
 	}
 	

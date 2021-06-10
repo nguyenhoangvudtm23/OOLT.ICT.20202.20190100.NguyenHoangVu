@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public abstract class Media implements Comparable<Media> {
 
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj) throws NullPointerException, ClassCastException {
 		// TODO Auto-generated method stub
 		if(this.getItemID() == ((Media)obj).getItemID()) return true;
 		return false;

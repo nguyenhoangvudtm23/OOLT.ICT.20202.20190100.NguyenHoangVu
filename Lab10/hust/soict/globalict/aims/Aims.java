@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.naming.LimitExceededException;
 
 import hust.soict.globalict.aims.media.*;
 
@@ -334,7 +335,12 @@ public class Aims {
 								}while(ans1 != 'y' && ans1 != 'n');
 								// if yes
 								if(ans1 == 'y') {
-									temp.play();
+									try {
+										temp.play();
+									} catch (PlayerException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 									System.out.println("Do u still wannt to add the item?");
 									// check if customer still want item after hearing
 									char ans2;
@@ -564,7 +570,15 @@ public class Aims {
 		}while(c != 'n' && c != 'y');
 		// if no
 		if(c == 'n') {
-			order = Order.createOrder();
+			try {
+				order = Order.createOrder();
+			} catch (LimitExceededException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (OutNumberOrderException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		// if yes
 		else {
